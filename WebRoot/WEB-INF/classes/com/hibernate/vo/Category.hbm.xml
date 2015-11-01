@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-10-30 12:52:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.vo.Category" table="CATEGORY">
+        <id name="categoryid" type="int">
+            <column name="CATEGORYID" />
+            <generator class="native" />
+        </id>
+        <property name="categoryname" type="java.lang.String">
+            <column name="CATEGORYNAME" />
+        </property>
+        <set name="setvote" table="VOTE" inverse="false" lazy="true">
+            <key>
+                <column name="CATEGORYID" />
+            </key>
+            <one-to-many class="com.hibernate.vo.Vote" />
+        </set>
+    </class>
+</hibernate-mapping>

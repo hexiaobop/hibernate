@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-10-30 12:52:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.vo.Optionlist" table="OPTIONLIST">
+        <id name="optionid" type="int">
+            <column name="OPTIONID" />
+            <generator class="native" />
+        </id>
+        <property name="optionname" type="java.lang.String">
+            <column name="OPTIONNAME" />
+        </property>
+        <property name="number" type="int">
+            <column name="NUMBER" />
+        </property>
+        <many-to-one name="vote" class="com.hibernate.vo.Vote" fetch="join">
+            <column name="VOTEID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

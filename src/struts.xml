@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+ <package name="default" extends="struts-default" namespace="/">
+	<action name="admin" class="com.hibernate.action.Admin">
+		<result name="success">/WEB-INF/admin/Main.jsp</result>
+	</action>
+	
+	<action name="addcategory" class="com.hibernate.action.AddCategory">
+		<result name="success" type="chain">admin</result>
+	</action>
+	<action name="addvote" class="com.hibernate.action.AddVote">
+		<result name="success" type="chain">admin</result>
+	</action>
+	
+	<action name="userscan" class="com.hibernate.action.UserScan">
+		<result name="success" type="dispatcher">/WEB-INF/user/Main.jsp</result>
+	</action>
+	<action name="showvote" class="com.hibernate.action.ShowVote">
+		<result name="success" type="dispatcher">/WEB-INF/user/ShowVote.jsp</result>
+	</action>
+	<action name="addoption" class="com.hibernate.action.AddOption">
+	
+         
+          <result name="success" type="dispatcher">/WEB-INF/user/ShowVote.jsp</result>
+
+	</action>
+	
+</package>
+</struts>    
